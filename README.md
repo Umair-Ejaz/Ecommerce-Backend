@@ -1,26 +1,42 @@
 ecommerce-backend/
 │── src/
+
 │   ├── config/
+
 │   │   └── db.js
+
 │   │        # Handles Sequelize connection to PostgreSQL.
+
 │   │        # Reads DB credentials from .env (DB_NAME, DB_USER, DB_PASS, etc.)
+
 │   │        # Exports a Sequelize instance used by all models.
+
 
 │   │
 │   ├── models/
+
 │   │   └── User.js
+
 │   │        # Defines User schema with fields:
+
 │   │        # name, email, password, role ("user" | "admin")
+
 │   │        # Includes validations like unique email, password hash.
 
 │   │
 │   │   └── Product.js
+
 │   │        # Defines Product schema with fields:
+
 │   │        # name, description, price, stock, categoryId
+
 │   │        # Can have relations with Category (if you add it).
+
 │   │
 │   │   └── Order.js
+
 │   │        # Defines Order schema with fields:
+
 │   │        # userId (FK), totalAmount, status ("pending", "shipped", "delivered")
 │   │        # Associations: Order belongsTo User, hasMany Products (through OrderItems).
 │   │
